@@ -72,20 +72,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const cpfRegex = /^\d{11}$/; 
         const cepRegex = /^\d{8}$/; 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        const nomeRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ~]+(?: [A-Za-zÀ-ÖØ-öø-ÿ~]+)*$/;
     
-        // Função auxiliar para exibir mensagens de erro
         function showError(elemento, mensagem) {
-            // Busca o elemento span com a classe "error" associado ao elemento
             const errorSpan = elemento.nextElementSibling;
             errorSpan.textContent = mensagem;
         }
     
-        // Inicializa um objeto para armazenar os resultados da validação
         const errors = {};
     
-        // Valida cada campo
         if (!nome) {
             errors.nome = 'O campo "Nome" é obrigatório.';
+        }else if (!nomeRegex.test(nome)) {
+            errors.nome = 'O nome deve conter apenas letras, espaços, e o caractere "~".';
         }
         if (!cpf) {
             errors.cpf = 'O campo "CPF" é obrigatório.';
