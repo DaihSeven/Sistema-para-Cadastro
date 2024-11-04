@@ -1,151 +1,91 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    padding-top: 4rem; 
-    background-image: url('https://www.tecnicon.com.br/images/large/criatividade-inovacao.png'); /* Substitua pelo link da sua imagem */
-    background-size: cover;
-    background-position: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+:root {
+    --cor-primaria-texto: #CCABD8; 
+    --cor-secundaria-fundo: #8474A1; 
+    --cor-fundo-header: #663399; 
+    --cor-secundario-texto: #CFD8DD; 
+    --cor-secundario-fundo: #a3c4f3;
+    --cor-header: #264653;
+    --cor-texto-principal: #7848AA; 
+    --cor-texto-secundario: #555555; 
+    --cor-coringa: #000; 
+    --cor-excluir: #63DADE; 
+    --cor-editar: #A26DCB
 }
-
-header {
-    background-color: violet;
-    padding: 1rem;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-nav {
-    display: flex;
-    justify-content: space-around;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.25rem;
-}
-
 .hidden {
     display: none;
 }
 
-
 #sobre {
-    color: #333;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
-    margin-top: 9em;
-    text-align:justify;
-}
-
-h1 {
-    font-size: 2.5em;
-    color: #2a9d8f;
-}
-
-h2 {
-    font-size: 1.8em;
-    color: #e9c46a;
-    /*background-image: url('https://promaflex.com.br/wp-content/uploads/2022/04/Linkedin-blog-post-2Prancheta-1-copiar-2-1140x600.png');  Substitua pelo link da sua imagem */
-    background-size: cover;
-    background-position: center;
-}
-
-p {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin: 10px 0;
+    color: var(--cor-texto-principal);
+    padding: 2.5rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.2);
+    max-width: 50rem;
+    margin-top: 26rem;
+    text-align: justify;
 }
 
 #sobreTexto {
     font-style: italic;
 }
 
-h3 {
-    font-size: 1.5em;
-    color: #264653;
-    margin-top: 30px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-li {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .imagem {
-    display: flex; /* Torna o container flexível */
-    justify-content: center; /* Centraliza horizontalmente */
+    display: flex;
+    justify-content: center;
 }
 
 .imagem img {
-    max-width: 300px; /* Ajuste o tamanho máximo da imagem */
-    width: 100%; /* Para que a imagem não ultrapasse seu container */
-    border-radius: 10px; /* Bordas arredondadas na imagem */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 18.75rem;
+    width: 100%;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
 }
 
 section {
-    background-color: #fff;
+    background-color: var(--cor-secundario-texto);
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     margin-top: 1rem;
     width: 100%;
-    
-    
-}
-#user-form {
-    width: 400px;
-    height: 600px;
 }
 
-h2 {
-    text-align: center;
+#user-form {
+    width: 26rem;
+    height: 43rem;
+}
+
+form label {
+    color: var(--cor-fundo-header);
 }
 
 form label, form input {
     display: block;
     margin-bottom: 0.5rem;
     width: 90%;
-    
+    font-weight: bold;  
 }
 
 form input {
     padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: 0.0625rem solid var(--cor-secundaria-fundo);
+    border-radius: 0.1875rem;
+    background-color: var(--cor-secundario-fundo);
 }
 
 button {
     padding: 0.75rem;
-    background-color: #4CAF50;
+    background-color: var(--cor-fundo-header);
     border: none;
-    color: #fff;
+    color: var(--cor-secundario-texto);
+    font-weight: bolder;
     font-size: 1rem;
-    border-radius: 3px;
+    border-radius: 0.1875rem;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: var(--cor-header);
 }
 
 table {
@@ -154,40 +94,42 @@ table {
 }
 
 thead {
-    background-color: #f2f2f2;
+    background-color: var(--cor-fundo-header);
 }
 
 th, td {
+    color: var(--cor-coringa);
     padding: 0.75rem;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0.250rem solid var(--cor-secundario-fundo);
 }
 
 .acao {
     text-align: center;
 }
 
-
 .acao button i {
     font-size: 1.25rem;
-    color: #333;
+    color: var(--cor-header);
 }
 
 .btn-editar {
-    background-color: #4CAF50;
-    color: white;
-    border: 3px;
-    padding: 10px 20px;
-    border-radius: 4px;
+    background-color: var(--cor-editar);
+    color: var(--cor-secundario-texto);
+    font-weight: bolder;
+    border: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.25rem;
     cursor: pointer;
 }
 
 .btn-excluir {
-    background-color: #f44336;
-    color: white;
+    background-color: var(--cor-excluir);
+    color: var(--cor-texto-principal);
+    font-weight: bolder;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.25rem;
     cursor: pointer;
 }
 
@@ -201,40 +143,39 @@ th, td {
     width: 100%;
 }
 
-
 #assunto {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    width: 90%;
+    padding: 0.625rem;
+    border: 0.0625rem solid var(--cor-secundaria-fundo);
+    border-radius: 0.1875rem;
 }
 
 #papel {
-    padding: 10px;
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0.625rem;
+    width: 90%;
+    border: 0.0625rem solid var(--cor-secundaria-fundo);
+    border-radius: 0.25rem;
     cursor: pointer;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #fff;
+    background-color: var(--cor-secundaria-fundo);
     min-width: 100%;
-    max-height: 150px;
+    max-height: 9.375rem;
     overflow-y: auto;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.0625rem solid var(--cor-secundario-fundo);
+    border-radius: 0.1875rem;
     z-index: 1;
 }
 
 .dropdown-content div {
-    padding: 10px;
+    padding: 0.625rem;
     cursor: pointer;
 }
 
 .dropdown-content div:hover {
-    background-color: #f1f1f1;
+    background-color: var(--cor-secundario-fundo);
 }

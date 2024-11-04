@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --cor-primaria-texto: #CCABD8; 
+    --cor-secundaria-fundo: #8474A1; 
+    --cor-fundo-header: #663399; 
+    --cor-secundario-texto: #CFD8DD; 
+    --cor-secundario-fundo: #a3c4f3; 
+    --cor-header: #264653;
+    --cor-texto-principal: #7848AA; 
+    --cor-texto-secundario: #555555; 
+    --cor-coringa: #000; 
+    --cor-excluir: #63DADE; 
+    --cor-editar: #A26DCB
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 4rem; 
+    background-image: url('https://www.tecnicon.com.br/images/large/criatividade-inovacao.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    background-color:var(--cor-fundo-header);
+    padding: 1rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: var(--cor-secundario-texto);
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--cor-header);
+    text-shadow: 3px 3px 5px var(--cor-secundario-fundo);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--cor-texto-principal);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-weight: bolder;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0.625rem 0;
+    font-weight: bolder;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--cor-header);
+    margin-top: 1.875rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 1.25rem;
+}
+
+li {
+    background: var(--cor-secundario-fundo);
+    color: var(--cor-fundo-header);
+    font-weight: bold;
+    border-radius: 0.3125rem;
+    padding: 0.625rem;
+    margin: 0.625rem 0;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
