@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const tbody = document.querySelector('tbody');
     const btnAddUser = document.getElementById('btnAddUser');
     const btnViewUsers = document.getElementById('btnViewUsers');
+    const assuntoInput = document.getElementById('assunto');
+    const assuntoList = document.getElementById('assuntoList');
+    const papelInput = document.getElementById('papel');
+    const papelList = document.getElementById('papelList');
     let id;
 
     const getUsersFromStorage = () => JSON.parse(localStorage.getItem('users')) || [];
@@ -23,6 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
         loadUsers();
     });
 
+    assuntoInput.addEventListener('click', () => {
+        assuntoList.style.display = assuntoList.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.selecionarAssunto = function(assunto) {
+        assuntoInput.value = assunto;
+        assuntoList.style.display = 'none';
+    };
+
+    window.addEventListener('click', (event) => {
+        if (!event.target.closest('.dropdown')) {
+            assuntoList.style.display = 'none';
+        }
+    });
+
+    papelInput.addEventListener('click', () => {
+        papelList.style.display = papelList.style.display === 'block' ? 'none' : 'block';
+    });
+
+    window.selecionarPapel = function(papel) {
+        papelInput.value = papel;
+        papelList.style.display = 'none';
+    };
+
+    window.addEventListener('click', (event) => {
+        if (!event.target.closest('.dropdown')) {
+            papelList.style.display = 'none';
+        }
+    });
+
     form.addEventListener('submit', e => {
         e.preventDefault();
     
@@ -31,7 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
             cpf: document.getElementById('cpf').value,
             email: document.getElementById('email').value,
             cep: document.getElementById('cep').value,
-            bairro: document.getElementById('bairro').value,
+            assunto: document.getElementById('assunto').value,
+            papel: document.getElementById('papel').value,
+            outro: document.getElementById('outro').value,
         };
     
         if (validateForm()) {
@@ -56,8 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             alert('Por favor, corrija os erros no formulário.');
         }
-    
-       
     });
 
     function validateForm() {
@@ -66,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const cpf = document.getElementById('cpf').value.trim();
         const email = document.getElementById('email').value.trim();
         const cep = document.getElementById('cep').value.trim();
-        const bairro = document.getElementById('bairro').value.trim();
+        const assunto = document.getElementById('assunto').value.trim();
+        const papel = document.getElementById('papel').value.trim();
     
-        
         const cpfRegex = /^\d{11}$/; 
         const cepRegex = /^\d{8}$/; 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
@@ -101,16 +135,17 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (!cepRegex.test(cep)) {
             errors.cep = 'O CEP deve conter exatamente 8 dígitos numéricos.';
         }
-        if (!bairro) {
-            errors.bairro = 'O campo "Bairro" é obrigatório.';
+        if (!assunto) {
+            errors.assunto = 'O campo "Assunto" é obrigatório.';
+        }
+        if (!papel) {
+            errors.assunto = 'O campo "Papel" é obrigatório.';
         }
     
-        // Exibe as mensagens de erro
         for (const campo in errors) {
             showError(document.getElementById(campo), errors[campo]);
         }
     
-        // Retorna true se não houver erros, caso contrário retorna false
         return Object.keys(errors).length === 0;
     }
 
@@ -124,7 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${user.cpf}</td>
                 <td>${user.email}</td>
                 <td>${user.cep}</td>
-                <td>${user.bairro}</td>
+                <td>${user.assunto}</td>
+                <td>${user.papel}</td>
+                <td>${user.outro}</td>
                 <td class="acao">
                     <button class="btn-editar" onclick="editUser(${index})" title="Editar usuário">
                         <i class='bx bx-edit'></i> Editar
@@ -145,7 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cpf').value = user.cpf;
         document.getElementById('email').value = user.email;
         document.getElementById('cep').value = user.cep;
-        document.getElementById('bairro').value = user.bairro;
+        document.getElementById('assunto').value = user.assunto;
+        document.getElementById('papel').value = user.papel;
+        document.getElementById('outro').value = user.outro;
         id = index;
         userForm.classList.remove('hidden');
         userList.classList.add('hidden');

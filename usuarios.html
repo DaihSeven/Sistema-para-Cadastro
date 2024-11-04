@@ -30,9 +30,32 @@
                 <label for="cep">CEP:</label> 
                 <input type="text" id="cep" required>
                 <span class="error"></span> 
-                <label for="bairro">Bairro:</label> 
-                <input type="text" id="bairro" required>
-                <span class="error"></span> 
+                <label for="assunto">Assunto:</label>
+                    <div class="dropdown">
+                    <input type="text" id="assunto" placeholder="Selecione um assunto" required readonly>
+                    <span class="error"></span> 
+                    <div class="dropdown-content" id="assuntoList">
+                        <div onclick="selecionarAssunto('Programação')">Programação</div>
+                        <div onclick="selecionarAssunto('FontEnd')">Front End</div>
+                        <div onclick="selecionarAssunto('BackEnd')">Back End</div>
+                        <div onclick="selecionarAssunto('Dados')">Dados</div>
+                        <div onclick="selecionarAssunto('Cloud')">Cloud</div>
+                        <div onclick="selecionarAssunto('Infraestrutura')">Infraestrutura</div>
+                        <div onclick="selecionarAssunto('Mentoria')">Mentoria</div>
+                        <div onclick="selecionarAssunto('Outro')">Outro</div>
+                    </div>
+                    </div>
+                <label for="papel">Qual é o seu papel na comunidade?:</label>
+                    <div class="dropdown">
+                    <input type="text" id="papel" placeholder="Selecione um papel" required readonly>
+                    <span class="error"></span> 
+                    <div class="dropdown-content" id="papelList">
+                        <div onclick="selecionarPapel('Mentor')">Mentor(a)</div>
+                        <div onclick="selecionarPapel('Estudante')">Estudante</div>
+                    </div>
+                </div>
+                <label for="outro">Outro assunto/ descrição:</label> 
+                <input type="text" id="outro" required> 
                 <button type="submit" id="btnSalvar">Salvar</button> 
             </form> 
         </section> 
@@ -45,8 +68,10 @@
                         <th>CPF</th> 
                         <th>Email</th> 
                         <th>CEP</th> 
-                        <th>Bairro</th> 
-                        <th>Ações</th> 
+                        <th>Assunto</th> 
+                        <th>Papel</th>
+                        <th>Outro assunto/ descrição</th>
+
                     </tr> 
                 </thead> 
                 <tbody></tbody> 
