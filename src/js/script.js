@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         const user = {
             nome: document.getElementById('nome').value,
-            cpf: document.getElementById('cpf').value,
+            link: document.getElementById('link').value,
             email: document.getElementById('email').value,
             cep: document.getElementById('cep').value,
             assunto: document.getElementById('assunto').value,
@@ -97,13 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function validateForm() {
         
         const nome = document.getElementById('nome').value.trim();
-        const cpf = document.getElementById('cpf').value.trim();
+        const link = document.getElementById('link').value.trim();
         const email = document.getElementById('email').value.trim();
         const cep = document.getElementById('cep').value.trim();
         const assunto = document.getElementById('assunto').value.trim();
         const papel = document.getElementById('papel').value.trim();
     
-        const cpfRegex = /^\d{11}$/; 
+        
         const cepRegex = /^\d{8}$/; 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
         const nomeRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ~]+(?: [A-Za-zÀ-ÖØ-öø-ÿ~]+)*$/;
@@ -120,10 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }else if (!nomeRegex.test(nome)) {
             errors.nome = 'O nome deve conter apenas letras, espaços, e o caractere "~".';
         }
-        if (!cpf) {
-            errors.cpf = 'O campo "CPF" é obrigatório.';
-        } else if (!cpfRegex.test(cpf)) {
-            errors.cpf = 'O CPF deve conter exatamente 11 dígitos numéricos.';
+        if (!link) {
+            errors.link ='O campo "Link" é obrigatório.';
         }
         if (!email) {
             errors.email = 'O campo "Email" é obrigatório.';
@@ -156,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>${user.nome}</td>
-                <td>${user.cpf}</td>
+                <td>${user.link}</td>
                 <td>${user.email}</td>
                 <td>${user.cep}</td>
                 <td>${user.assunto}</td>
@@ -179,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let users = getUsersFromStorage();
         const user = users[index];
         document.getElementById('nome').value = user.nome;
-        document.getElementById('cpf').value = user.cpf;
+        document.getElementById('link').value = user.link;
         document.getElementById('email').value = user.email;
         document.getElementById('cep').value = user.cep;
         document.getElementById('assunto').value = user.assunto;
