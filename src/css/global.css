@@ -20,6 +20,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
     height: 100vh;
     padding-top: 4rem; 
     background-image: url('https://www.tecnicon.com.br/images/large/criatividade-inovacao.png'); 
@@ -91,3 +92,18 @@ li {
     margin: 0.625rem 0;
     box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
 }
+
+footer {
+    position: relative; /* Mantém o rodapé fixo na parte inferior */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo-header);
+    padding: 20px;
+    color: var(--cor-secundario-texto);
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    box-sizing: border-box;
+    margin: 0;
+  }
