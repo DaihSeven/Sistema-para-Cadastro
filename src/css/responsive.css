@@ -1,0 +1,148 @@
+@media (max-width: 768px) { 
+    body {
+        margin-top: 22rem;
+    }
+
+    #sobre {
+        margin-top: 10rem;
+        padding: 1rem;
+    }
+
+    #user-form {
+        width: 90%;
+        height: auto;
+    }
+
+    .imagem img {
+        max-width: 10rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    ul li {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) { 
+    .user-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .user-list li {
+        background-color: var(--cor-secundario-fundo);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        font-size: 0.9rem;
+        color: var(--cor-texto-principal);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user-list {
+        grid-template-columns: 1fr;
+    }
+
+    .user-list li strong {
+        font-weight: bold;
+    }
+
+    .user-list li button {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 380px) { 
+    body {
+        margin-top: 18rem;
+    }
+
+    #sobre {
+        margin-top: 8rem;
+        padding: 0.5rem;
+    }
+
+    #user-form {
+        width: 85%;
+        height: auto;
+    }
+
+    .imagem img {
+        max-width: 8rem;
+    }
+
+    header {
+        padding: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    ul li {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+    }
+
+    .user-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .user-list li {
+        background-color: var(--cor-secundario-fundo);
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+        font-size: 0.8rem;
+        color: var(--cor-texto-principal);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .user-list li button {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+}
+
